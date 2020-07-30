@@ -1,7 +1,14 @@
 mat-form-field{
   width: 40%;
+
 }
 
 .signup{
   margin: 3rem;
+}
+@media screen and (max-width: 600px) {
+  mat-form-field{
+    width: 100%;
+
+  }
 }
