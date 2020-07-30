@@ -13,7 +13,7 @@ import {PastTrainingsComponent} from "./training/past-trainings/past-trainings.c
 import {TrainingComponent} from "./training/training.component";
 import {WelcomeComponent} from "./welcome/welcome.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -26,6 +26,9 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {StopTrainingComponent} from "./training/current-training/stop-training.component";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -57,6 +60,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatSelectModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     // HttpModule
 
   ],
