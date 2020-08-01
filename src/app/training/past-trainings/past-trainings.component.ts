@@ -4,6 +4,8 @@ import {Exercise} from "../exercise.model";
 import {TrainingService} from "../training.service";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
+import {Store} from "@ngrx/store";
+import {getFinishedExercises, State} from "../../app.reducer";
 
 @Component({
   selector: 'app-past-trainings',
@@ -17,10 +19,10 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private trainingService: TrainingService) {}
+  constructor(private trainingService: TrainingService,private store: Store<State>) {}
 
   ngOnInit() {
-    this.trainingService.finishedExercisesChanged.subscribe((exercises:Exercise[])=>{
+    this.store.select(getFinishedExercises).subscribe((exercises:Exercise[])=>{
       this.dataSource.data = exercises;
       console.log(exercises);
     })
