@@ -31,12 +31,19 @@ export class TrainingService {
     this.fbSubs.push(this.db.collection('availableExercises').snapshotChanges().pipe(
       map(docArray=>{
         return docArray.map(doc=>{
-          return  {
-            id: doc.payload.doc.id,
-            name: doc.payload.doc.data().name,
-            duration: doc.payload.doc.data().duration,
-            calories: doc.payload.doc.data().calories
-          };
+
+          const data = doc.payload.doc.data() as Exercise;
+          const id = doc.payload.doc.id;
+          return {id:doc.payload.doc.id, ...data};
+
+
+
+          // return  {
+          //   id: doc.payload.doc.id,
+          //   name: doc.payload.doc.data().name,
+          //   duration: doc.payload.doc.data().duration,
+          //   calories: doc.payload.doc.data().calories
+          // };
         })
       })).subscribe((result:Exercise[])=>{
       this.store.dispatch(new StopLoading());
