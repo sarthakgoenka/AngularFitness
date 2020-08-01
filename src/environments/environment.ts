@@ -4,16 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase : {
-    apiKey: "AIzaSyBAeO8l0kQC0e9U42O3NAQGi5lOrtpf8bc",
-    authDomain: "angular-fitness-9eca2.firebaseapp.com",
-    databaseURL: "https://angular-fitness-9eca2.firebaseio.com",
-    projectId: "angular-fitness-9eca2",
-    storageBucket: "angular-fitness-9eca2.appspot.com",
-    messagingSenderId: "875417767405",
-    appId: "1:875417767405:web:e995e8f2c98015d3736be4",
-    measurementId: "G-KQ2YY5B01H"
-  }
+//Your firebase cofig here
 };
 
 /*
