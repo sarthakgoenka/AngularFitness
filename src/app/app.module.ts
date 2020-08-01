@@ -33,12 +33,13 @@ import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {AngularFirestoreModule} from "@angular/fire/firestore";
 import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
+import {AuthModule} from "./auth/auth.module";
+import {StoreModule} from "@ngrx/store";
+import {appReducer} from "./app.reducer";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    SignupComponent,
     CurrentTrainingComponent,
     NewTrainingComponent,
     PastTrainingsComponent,
@@ -58,10 +59,12 @@ import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AuthModule,
+    StoreModule.forRoot({ui : appReducer})
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [StopTrainingComponent]
+  bootstrap: [AppComponent]
+
 })
 export class AppModule { }
